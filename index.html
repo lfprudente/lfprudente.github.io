@@ -312,7 +312,7 @@ filters.innerHTML = [{ id: "all", label: "All", n: total }, ...groups.map(g => (
 filters.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
-  document.querySelectorAll(".group").forEach(s => { s.hidden = b.dataset.f !== "all" && s.dataset.group !== b.dataset.f; });
+  document.querySelectorAll("#pubs .group").forEach(s => { s.hidden = b.dataset.f !== "all" && s.dataset.group !== b.dataset.f; });
 });
 
 /* ---------- Copy e-mail ---------- */
