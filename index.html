@@ -66,7 +66,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 
 /* ---------- Profile column ---------- */
-.profile { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); align-self: start; display: grid; gap: 28px; }
+.profile { align-self: start; display: grid; gap: 28px; }
+/* Stick only when the whole column fits in the window. */
+@media (min-width: 861px) and (min-height: 1000px) { .profile { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); } }
+.side-blocks { display: grid; gap: 28px; }
 .id { display: grid; gap: 18px; }
 .photo { width: 100%; height: auto; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 6px; display: block; background: var(--rule); }
 .id h1 { font: 600 2rem/1.1 var(--serif); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
@@ -134,11 +137,12 @@ main { min-width: 0; display: grid; gap: 56px; }
 .ic .y { font: 500 0.9rem/1.6 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
 .ic b { color: var(--ink); font-weight: 600; }
 
-footer { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font: 400 0.75rem/1.5 var(--mono); color: var(--muted); }
+footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font: 400 0.75rem/1.5 var(--mono); color: var(--muted); }
 
 /* ---------- Narrow screens ---------- */
 @media (max-width: 860px) {
   .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 28px 32px; }
+  footer { grid-column: 1; }
   .profile { position: static; }
   .id { grid-template-columns: 104px minmax(0, 1fr); align-items: center; gap: 16px; }
   .photo { aspect-ratio: 1; border-radius: 50%; }
