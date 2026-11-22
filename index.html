@@ -74,6 +74,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .photo { width: 100%; height: auto; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 6px; display: block; background: var(--rule); }
 .id h1 { font: 600 2rem/1.1 var(--serif); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
 .role { margin: 6px 0 0; color: var(--muted); font-size: 0.98rem; line-height: 1.45; }
+.role a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.role a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .label { font: 500 0.7rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 10px; }
 .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .links a { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--rule); color: var(--ink); }
@@ -166,7 +168,7 @@ footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; d
       <img class="photo" src="assets/photo.jpg" width="640" height="853" alt="Portrait of Leandro F. Prudente">
       <div>
         <h1>Leandro F. Prudente</h1>
-        <p class="role">Associate Professor<br>Institute of Mathematics and Statistics<br>Federal University of Goiás<br>CNPq Research Fellow (PQ-1D)</p>
+        <p class="role">Associate Professor<br><a href="https://ime.ufg.br/">Institute of Mathematics and Statistics</a><br><a href="https://www.ufg.br/">Federal University of Goiás</a><br>CNPq Research Fellow (PQ-1D)</p>
       </div>
     </div>
 
