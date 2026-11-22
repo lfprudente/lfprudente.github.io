@@ -322,6 +322,11 @@ document.getElementById("copy-email").addEventListener("click", e => {
     .catch(() => { btn.textContent = addr; });
 });
 
+/* ---------- External links open in a new tab ---------- */
+document.querySelectorAll('a[href^="http"]').forEach(a => {
+  if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
+});
+
 </script>
 </body>
 </html>
