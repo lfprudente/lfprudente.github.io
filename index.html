@@ -88,6 +88,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 /* ---------- Main column ---------- */
 main { min-width: 0; display: grid; gap: 56px; }
+.jump { justify-self: end; margin-bottom: -40px; font: 400 0.75rem/1 var(--mono); color: var(--muted); }
+.jump a { color: inherit; text-decoration: none; }
+.jump a:hover { color: var(--accent); }
+#publications, #students { scroll-margin-top: 24px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .intro { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: center; }
 .intro p { margin: 0 0 12px; max-width: 62ch; }
 .intro p:last-child { margin-bottom: 0; }
@@ -126,6 +131,8 @@ main { min-width: 0; display: grid; gap: 56px; }
 .pub .t a:hover { color: var(--accent); }
 .pub .a { font-size: 0.93rem; color: var(--muted); }
 .pub .a b { color: var(--ink); font-weight: 600; }
+.pub .a a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.pub .a a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .pub .v { font-size: 0.93rem; color: var(--muted); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
 .pub .v i { color: var(--ink); }
 .tags { display: inline-flex; gap: 6px; }
@@ -201,6 +208,7 @@ footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; d
   </aside>
 
   <main>
+    <nav class="jump" aria-label="On this page"><a href="#publications">Publications</a> · <a href="#students">Students</a></nav>
     <section class="intro" aria-label="About">
       <div>
         <p class="lede">I work on continuous optimization, mainly on methods for multiobjective and vector optimization.</p>
@@ -227,7 +235,7 @@ footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; d
       </script>
     </section>
 
-    <section aria-labelledby="pubs-title">
+    <section id="publications" aria-labelledby="pubs-title">
       <div class="pubhead">
         <h2 id="pubs-title">Publications</h2>
         <div class="filters" role="group" aria-label="Filter publications" id="filters"></div>
@@ -235,30 +243,30 @@ footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; d
       <div id="pubs"></div>
     </section>
 
-    <section aria-labelledby="students-title">
+    <section id="students" aria-labelledby="students-title">
       <div class="pubhead"><h2 id="students-title">Students</h2><span class="note">Completed supervisions</span></div>
 
       <section class="group">
         <h3>Ph.D.</h3>
         <div class="year"><div class="y">2023</div><div class="entries">
-          <article class="pub"><div class="t">Danilo R. de Souza</div><div class="a">Métodos quase-Newton com busca linear de Wolfe para otimização multiobjetivo</div></article>
+          <article class="pub"><div class="t">Danilo R. de Souza</div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/15267">Métodos quase-Newton com busca linear de Wolfe para otimização multiobjetivo</a></div></article>
         </div></div>
         <div class="year"><div class="y">2022</div><div class="entries">
-          <article class="pub"><div class="t">Fernando S. Lima <span class="co">Co-advisor</span></div><div class="a">Newton-type and conjugate gradient methods for vector optimization</div></article>
+          <article class="pub"><div class="t">Fernando S. Lima <span class="co">Co-advisor</span></div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/12020">Newton-type and conjugate gradient methods for vector optimization</a></div></article>
         </div></div>
         <div class="year"><div class="y">2021</div><div class="entries">
-          <article class="pub"><div class="t">Ademir A. Aguiar <span class="co">Co-advisor</span></div><div class="a">Subgradient and gradient methods with feasible inexact projections for constrained convex optimization problems</div></article>
-          <article class="pub"><div class="t">Pedro B. de Assunção <span class="co">Co-advisor</span></div><div class="a">Conditional gradient methods for multiobjective optimization</div></article>
+          <article class="pub"><div class="t">Ademir A. Aguiar <span class="co">Co-advisor</span></div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/11400">Subgradient and gradient methods with feasible inexact projections for constrained convex optimization problems</a></div></article>
+          <article class="pub"><div class="t">Pedro B. de Assunção <span class="co">Co-advisor</span></div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/12772">Conditional gradient methods for multiobjective optimization</a></div></article>
         </div></div>
         <div class="year"><div class="y">2019</div><div class="entries">
-          <article class="pub"><div class="t">Mauricio S. Louzeiro <span class="co">Co-advisor</span></div><div class="a">Optimization methods on Riemannian manifolds with lower bound curvature: gradient for scalar and multi-objective and subgradient for scalar functions</div></article>
+          <article class="pub"><div class="t">Mauricio S. Louzeiro <span class="co">Co-advisor</span></div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/9333">Optimization methods on Riemannian manifolds with lower bound curvature: gradient for scalar and multi-objective and subgradient for scalar functions</a></div></article>
         </div></div>
       </section>
 
       <section class="group">
         <h3>M.Sc.</h3>
         <div class="year"><div class="y">2019</div><div class="entries">
-          <article class="pub"><div class="t">Danilo R. de Souza</div><div class="a">Método de gradiente conjugado Dai-Yuan modificado para otimização irrestrita</div></article>
+          <article class="pub"><div class="t">Danilo R. de Souza</div><div class="a"><a href="https://repositorio.bc.ufg.br/tede/handle/tede/9370">Método do gradiente conjugado Dai-Yuan modificado para otimização irrestrita</a></div></article>
         </div></div>
       </section>
 
