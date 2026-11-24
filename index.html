@@ -155,6 +155,10 @@ footer { grid-column: 2; border-top: 1px solid var(--rule); padding-top: 20px; d
   .intro { grid-template-columns: minmax(0, 1fr); }
   .trace { max-width: 380px; }
 }
+/* Phones: drop the figure so the publications come sooner. */
+@media (max-width: 600px) {
+  .trace { display: none; }
+}
 @media (max-width: 480px) {
   .year { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .year > .y { position: static; }
