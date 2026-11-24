@@ -61,17 +61,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 250px minmax(0, 1fr);
   gap: 64px;
 }
 
 /* ---------- Profile column ---------- */
 .profile { align-self: start; display: grid; gap: 28px; }
 /* Stick only when the whole column fits in the window. */
-@media (min-width: 861px) and (min-height: 1000px) { .profile { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); } }
+@media (min-width: 861px) and (min-height: 920px) { .profile { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); } }
 .side-blocks { display: grid; gap: 28px; }
 .id { display: grid; gap: 18px; }
-.photo { width: 100%; height: auto; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 6px; display: block; background: var(--rule); }
+.photo { width: 100%; height: auto; max-width: 210px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 6px; display: block; background: var(--rule); }
 .id h1 { font: 600 2rem/1.1 var(--serif); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
 .role { margin: 6px 0 0; color: var(--muted); font-size: 0.98rem; line-height: 1.45; }
 .role a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
